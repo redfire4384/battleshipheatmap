@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battleship Probability Map</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .setup {
+            margin-bottom: 20px;
+        }
+
         .grid {
             display: grid;
         }
+
         .cell {
             border: 1px solid black;
             width: 30px;
             height: 30px;
             text-align: center;
             line-height: 30px;
+            transition: background-color 0.3s;
         }
+
         .hit {
             background-color: red;
         }
+
         .miss {
             background-color: lightgrey;
         }
     </style>
 </head>
+
 <body>
-    Grid Size: <input type="number" id="gridSize" value="10">
-    Number of Ships: <input type="number" id="numShips" value="5">
-    Ship Sizes (comma separated): <input type="text" id="shipSizes" value="2,3,3,4,5">
-    <button onclick="setupGrid()">Setup</button>
+    <div class="setup">
+        Grid Size: <input type="number" id="gridSize" value="10">
+        Number of Ships: <input type="number" id="numShips" value="5">
+        Ship Sizes (comma separated): <input type="text" id="shipSizes" value="2,3,3,4,5">
+        <button onclick="setupGrid()">Setup</button>
+    </div>
     <div id="grid"></div>
     <script src="script.js"></script>
 </body>
+
 </html>
